@@ -95,7 +95,7 @@ final case class DefinitionGenerator(
           val refNames: Seq[String] = for {
             p ← thisDef.properties.collect(genSwaggerParameter)
             className ← findRefTypes(p)
-            if modelQualifier.isModel(className)
+            //if modelQualifier.isModel(className)
           } yield className
 
           refNames.foldLeft(thisDef :: memo) { (foundDefs, refName) ⇒
